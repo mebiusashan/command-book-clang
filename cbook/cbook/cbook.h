@@ -15,4 +15,9 @@
 #include "config.h"
 #include "viewmanger.h"
 
+
+#define CONFIG_ERR "警告：尚未配置书库路径\ncbook <book library dir path>\n"
+#define BOOKDIR_ERR "错误：书库路径不存在:%s\ncbook <book library dir path>\n"
+#define CONFIG_P_ERR "错误：配置文件读取失败\ncbook <book library dir path>\n"
+
 #endif /* cbook_h */

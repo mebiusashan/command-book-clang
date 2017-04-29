@@ -165,7 +165,6 @@ void setPointByMD5(char* md5, unsigned int p, struct bookc* head)
             float prog = (float)p/cur->len_r*100;
             prog = ceilf(prog);
             if(prog<10){
-                //cur->progress = "100%";
                 sprintf(cur->progress,"  %d%%",(int)prog);
             }else if(prog<100){
                 sprintf(cur->progress," %d%%",(int)prog);
@@ -178,7 +177,7 @@ void setPointByMD5(char* md5, unsigned int p, struct bookc* head)
     }
 }
 
-void readPointConfig(struct bookc* head)
+int readPointConfig(struct bookc* head)
 {
     struct passwd *pw = getpwuid(getuid());
     char *configRoot = (char *)malloc(1+strlen(pw->pw_dir)+strlen(CBOOK_POINT_CONFIG));
@@ -186,35 +185,42 @@ void readPointConfig(struct bookc* head)
     strcpy(configRoot, pw->pw_dir);
     strcat(configRoot, CBOOK_POINT_CONFIG);
     
+    int num = 0;
+    
     if(access(configRoot, F_OK)==-1)
     {
-        writePointConfig(configRoot, head);
+        num = writePointConfig(configRoot, head);
     }
     else
     {
         //读取文件，然后将里面的数据赋值给现在内存中的数据
         FILE *fd= fopen(configRoot, "r");
-        if(fd==NULL) return;
+        if(fd==NULL) -1;
         struct bookp* bp = (struct bookp*)malloc(sizeof(struct bookp));
         bp->md5 = (char*)malloc(MD5_STR_LEN+1);
         bp->point = 0;
         
         while( fscanf(fd,"%s %d ",bp->md5,&bp->point)!=EOF) {
             setPointByMD5(bp->md5, bp->point, head);
+            num++;
         }
         fclose(fd);
     }
+    return num;
 }
 
-void writePointConfig(char* path, struct bookc* head)
+int writePointConfig(char* path, struct bookc* head)
 {
+    int num = 0;
     FILE *fd= fopen(path, "w");
     struct bookc* cur = head;
     while(cur->next!=NULL)
     {
         fprintf(fd, "%s %d ",cur->bp->md5,cur->bp->point);
         cur = cur->next;
+        num++;
     }
     fclose(fd);
+    return num;
 }
 

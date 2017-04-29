@@ -37,6 +37,7 @@ struct bookc {
     struct bookp *bp;
     struct bookc* next;
 };
+
 struct bookp {
     char *md5;
     unsigned int point;
@@ -44,7 +45,7 @@ struct bookp {
 
 int readConfig(char** bpath);
 struct bookc *scanDir(char* path);
-void readPointConfig();
-void writePointConfig();
+int readPointConfig();
+int writePointConfig();
 
 #endif /* config_h */

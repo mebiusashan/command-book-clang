@@ -1,10 +1,5 @@
 #include "cbook.h"
 
-#define CONFIG_ERR "警告：尚未配置书库路径。\ncbook <book library dir path>\n"
-#define BOOKDIR_ERR "错误：书库路径不存在:%s\ncbook <book library dir path>\n"
-
-//------------------------------------------------------------------------------
-
 int main()
 {
     char *url = NULL;
@@ -23,8 +18,14 @@ int main()
         return 0;
     }
     
-    readPointConfig(bc);
-    initview(bc);
+    int rel = readPointConfig(bc);
+    if(rel==-1)
+    {
+        printf(CONFIG_P_ERR);
+        return 0;
+    }
+        
+    initview(bc,rel);
     
     return 0;
 }

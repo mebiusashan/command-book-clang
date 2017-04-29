@@ -13,13 +13,16 @@
 #include "ncurses.h"
 #include "menu.h"
 #include "config.h"
+#include "viewutil.h"
 
-#define HELP " 目录:m 上一行/上翻页:k 下一行/下翻页:j 确认:enter 退出:q copyright © ashan.org "
 
-void showMenuView(struct bookc* head);
+void showMenuView(struct bookc* head, int num);
+void showMenu(struct bookc* head,int w,int h);
+void initMenu(int w, int h);
 void nextMenu();
 void prevMenu();
-int enterMenu();
+int  enterMenu();
+void showTitle(int num);
 
 
 #endif /* ListView_h */

@@ -19,14 +19,14 @@ void initKeyboard();
 
 int win = MENU_WIN;
 struct bookc* head;
+int booknum = 0;
 
-void initview(struct bookc* bc)
+void initview(struct bookc* bc,int _num)
 {
     head = bc;
-    
+    booknum = _num;
     init_setting();
-    
-    
+    init_color_theme();
     ref();
     initKeyboard();
     endwin();
@@ -38,26 +38,21 @@ void initKeyboard()
     while (ch!='q'&&ch!=27) {
         switch (ch) {
             case 'j':
-                //next
                 next();
                 break;
             case 'k':
                 prev();
                 break;
             case 'm':
-                //
                 backMenu();
                 break;
             case 32:
-                //space
                 next();
                 break;
             case 10:
-                //ENTER
                 enter();
                 break;
             default:
-                //printf("key is Down:%d\n",ch);
                 break;
         }
         ch = getch();
@@ -67,10 +62,9 @@ void initKeyboard()
 void ref()
 {
     refresh();
-    
     if(win==MENU_WIN)
     {
-        showMenuView(head);
+        showMenuView(head, booknum);
     }
     else
     {
@@ -107,8 +101,9 @@ void backMenu()
 {
     if(win==BOOK_WIN)
     {
-        win = MENU_WIN;
-        showMenuView(head);
+        clear();
+        win=MENU_WIN;
+        ref();
     }
 }
 
@@ -122,10 +117,6 @@ void enter()
         openBook(curIndex);
         win=BOOK_WIN;
     }
-    else
-    {
-        win=MENU_WIN;
-    }
     ref();
 }
 
@@ -135,7 +126,7 @@ void openBook(int index)
     for (int i=0; i<index; i++) {
         cur = cur->next;
     }
-    set_book_path(cur->path,cur->bp->point);
+    set_book_path(cur->name , cur->path,cur->bp->point);
 }
 
 

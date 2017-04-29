@@ -20,10 +20,6 @@
 #define MENU_WIN 0
 #define BOOK_WIN 1
 
-//int win = MENU_WIN;
-void initview(struct bookc* bc);
-
-
-
+void initview(struct bookc* bc,int num);
 
 #endif /* ViewManger_h */

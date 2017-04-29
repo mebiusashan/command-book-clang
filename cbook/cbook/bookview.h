@@ -12,7 +12,9 @@
 #include <stdio.h>
 #include "ncurses.h"
 
+#include "viewutil.h"
+
 void showBookView();
-void set_book_path(char* path, int p);
+void set_book_path(char* name, char* path, int p);
 
 #endif /* BookView_h */
