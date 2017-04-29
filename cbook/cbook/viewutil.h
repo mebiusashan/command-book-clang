@@ -13,7 +13,7 @@
 #include <locale.h>
 #include "ncurses.h"
 
-#define HELP " 目录:m 上一行/上翻页:k 下一行/下翻页:j 确认:enter 退出:q copyright © ashan.org "
+#define HELP " Menu:m Up/Prev:k Down/Next:j Go:enter Quit:q --- copyright © ashan.org "
 
 void init_setting();
 void init_color_theme();

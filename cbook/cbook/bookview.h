@@ -13,8 +13,9 @@
 #include "ncurses.h"
 
 #include "viewutil.h"
+#include "config.h"
 
 void showBookView();
-void set_book_path(char* name, char* path, int p);
+void set_book_path(struct bookc* _bookc);
 
 #endif /* BookView_h */

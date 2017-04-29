@@ -126,7 +126,7 @@ void openBook(int index)
     for (int i=0; i<index; i++) {
         cur = cur->next;
     }
-    set_book_path(cur->name , cur->path,cur->bp->point);
+    set_book_path(cur);
 }
 
 

@@ -43,7 +43,6 @@ void inin_menu_win(struct bookc* head,int w,int h)
     if(my_items==NULL)
     {
         my_items = (ITEM **)calloc(num + 1, sizeof(ITEM *));
-        
         struct bookc* cur = head;
         int index = 0;
         while(cur->next!=NULL)
@@ -54,17 +53,13 @@ void inin_menu_win(struct bookc* head,int w,int h)
         }
         my_items[num] = (ITEM *)NULL;
         my_menu = new_menu((ITEM **)my_items);
-        
         my_menu_win = newwin(h-3, w-2, 1, 1);
         set_menu_win(my_menu, my_menu_win);
         set_menu_sub(my_menu, derwin(my_menu_win, 6, w-2, 3, 1));
         set_menu_format(my_menu, h-3, 1);
         set_menu_mark(my_menu, " -> ");
-        
         set_menu_back(my_menu, COLOR_PAIR(4));
         set_menu_fore(my_menu, COLOR_PAIR(3)|A_BOLD);
-        
-        
         post_menu(my_menu);
     }
 }
@@ -72,6 +67,7 @@ void inin_menu_win(struct bookc* head,int w,int h)
 void showMenu(struct bookc* head,int w,int h)
 {
     inin_menu_win(head,w,h);
+    menu_driver(my_menu, REQ_DOWN_ITEM);
     menu_driver(my_menu, REQ_FIRST_ITEM);
     wrefresh(my_menu_win);
 }
@@ -79,9 +75,8 @@ void showMenu(struct bookc* head,int w,int h)
 void showTitle(int num)
 {
     move(0,2);
-    printw_color_c(2,"%s"," CBook 共[");
-    printw_color_i(5,"%d",num+1);
-    printw_color_c(2,"%s","]本图书 ");
+    printw_color_c(2,"%s"," [CBook] Total:");
+    printw_color_i(5,"%d ",num+1);
 }
 
 void nextMenu()
