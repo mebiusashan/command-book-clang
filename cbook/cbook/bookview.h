@@ -6,12 +6,13 @@
 //  Copyright © 2017年 ashan. All rights reserved.
 //
 
-#ifndef BookView_h
-#define BookView_h
+#ifndef bookview_h
+#define bookview_h
 
 #include <stdio.h>
 #include "ncurses.h"
 
 void showBookView();
+void set_book_path(char* path, int p);
 
 #endif /* BookView_h */

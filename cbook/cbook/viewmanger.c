@@ -6,7 +6,7 @@
 //  Copyright © 2017年 ashan. All rights reserved.
 //
 
-#include "ViewManger.h"
+#include "viewmanger.h"
 
 //
 void backMenu();
@@ -23,13 +23,9 @@ struct bookc* head;
 void initview(struct bookc* bc)
 {
     head = bc;
-    setlocale(LC_ALL,"");
-    initscr();
-    noecho();
-    raw();
-    start_color();
-    curs_set(0);
-    keypad(stdscr,TRUE);
+    
+    init_setting();
+    
     
     ref();
     initKeyboard();
@@ -135,7 +131,11 @@ void enter()
 
 void openBook(int index)
 {
-    
+    struct bookc* cur = head;
+    for (int i=0; i<index; i++) {
+        cur = cur->next;
+    }
+    set_book_path(cur->path,cur->bp->point);
 }
 
 

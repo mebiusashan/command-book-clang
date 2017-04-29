@@ -13,6 +13,6 @@
 #include "stdlib.h"
 
 #include "config.h"
-#include "ViewManger.h"
+#include "viewmanger.h"
 
 #endif /* cbook_h */

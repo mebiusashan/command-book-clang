@@ -6,7 +6,7 @@
 //  Copyright © 2017年 ashan. All rights reserved.
 //
 
-#include "MenuView.h"
+#include "menuview.h"
 
 WINDOW *create_newwin(int height, int width, int starty, int startx)
 {	WINDOW *local_win;

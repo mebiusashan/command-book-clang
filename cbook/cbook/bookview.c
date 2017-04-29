@@ -6,7 +6,7 @@
 //  Copyright © 2017年 ashan. All rights reserved.
 //
 
-#include "BookView.h"
+#include "bookview.h"
 
 
 WINDOW *acreate_newwin(int height, int width, int starty, int startx)
@@ -30,4 +30,9 @@ void showBookView()
     WINDOW *my_win;
     my_win = acreate_newwin(h-1, w, 0, 0);
     //printw("fadfad");
+}
+
+void set_book_path(char* path, int p)
+{
+    
 }

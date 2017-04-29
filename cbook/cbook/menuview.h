@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ashan. All rights reserved.
 //
 
-#ifndef MenuView_h
-#define MenuView_h
+#ifndef menuview_h
+#define menuview_h
 
 #include <stdio.h>
 #include "ncurses.h"
