@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E9EFE7081EB4943C00A77FF5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE7071EB4943C00A77FF5 /* main.c */; };
+		E9EFE7101EB4944C00A77FF5 /* libmenu.5.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EFE70F1EB4944C00A77FF5 /* libmenu.5.4.tbd */; };
+		E9EFE7121EB4945100A77FF5 /* libncurses.5.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EFE7111EB4945100A77FF5 /* libncurses.5.4.tbd */; };
+		E9EFE71E1EB4948900A77FF5 /* BookView.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE7131EB4948900A77FF5 /* BookView.c */; };
+		E9EFE71F1EB4948900A77FF5 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE7161EB4948900A77FF5 /* config.c */; };
+		E9EFE7201EB4948900A77FF5 /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE7181EB4948900A77FF5 /* md5.c */; };
+		E9EFE7211EB4948900A77FF5 /* MenuView.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE71A1EB4948900A77FF5 /* MenuView.c */; };
+		E9EFE7221EB4948900A77FF5 /* ViewManger.c in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE71C1EB4948900A77FF5 /* ViewManger.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,19 @@
 /* Begin PBXFileReference section */
 		E9EFE7041EB4943C00A77FF5 /* cbook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EFE7071EB4943C00A77FF5 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E9EFE70F1EB4944C00A77FF5 /* libmenu.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmenu.5.4.tbd; path = usr/lib/libmenu.5.4.tbd; sourceTree = SDKROOT; };
+		E9EFE7111EB4945100A77FF5 /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = usr/lib/libncurses.5.4.tbd; sourceTree = SDKROOT; };
+		E9EFE7131EB4948900A77FF5 /* BookView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BookView.c; sourceTree = "<group>"; };
+		E9EFE7141EB4948900A77FF5 /* BookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookView.h; sourceTree = "<group>"; };
+		E9EFE7151EB4948900A77FF5 /* cbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cbook.h; sourceTree = "<group>"; };
+		E9EFE7161EB4948900A77FF5 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = config.c; sourceTree = "<group>"; };
+		E9EFE7171EB4948900A77FF5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E9EFE7181EB4948900A77FF5 /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		E9EFE7191EB4948900A77FF5 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		E9EFE71A1EB4948900A77FF5 /* MenuView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MenuView.c; sourceTree = "<group>"; };
+		E9EFE71B1EB4948900A77FF5 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		E9EFE71C1EB4948900A77FF5 /* ViewManger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ViewManger.c; sourceTree = "<group>"; };
+		E9EFE71D1EB4948900A77FF5 /* ViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewManger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EFE7121EB4945100A77FF5 /* libncurses.5.4.tbd in Frameworks */,
+				E9EFE7101EB4944C00A77FF5 /* libmenu.5.4.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +65,7 @@
 			children = (
 				E9EFE7061EB4943C00A77FF5 /* cbook */,
 				E9EFE7051EB4943C00A77FF5 /* Products */,
+				E9EFE70E1EB4944C00A77FF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +80,29 @@
 		E9EFE7061EB4943C00A77FF5 /* cbook */ = {
 			isa = PBXGroup;
 			children = (
+				E9EFE7131EB4948900A77FF5 /* BookView.c */,
+				E9EFE7141EB4948900A77FF5 /* BookView.h */,
+				E9EFE7151EB4948900A77FF5 /* cbook.h */,
+				E9EFE7161EB4948900A77FF5 /* config.c */,
+				E9EFE7171EB4948900A77FF5 /* config.h */,
+				E9EFE7181EB4948900A77FF5 /* md5.c */,
+				E9EFE7191EB4948900A77FF5 /* md5.h */,
+				E9EFE71A1EB4948900A77FF5 /* MenuView.c */,
+				E9EFE71B1EB4948900A77FF5 /* MenuView.h */,
+				E9EFE71C1EB4948900A77FF5 /* ViewManger.c */,
+				E9EFE71D1EB4948900A77FF5 /* ViewManger.h */,
 				E9EFE7071EB4943C00A77FF5 /* main.c */,
 			);
 			path = cbook;
+			sourceTree = "<group>";
+		};
+		E9EFE70E1EB4944C00A77FF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9EFE7111EB4945100A77FF5 /* libncurses.5.4.tbd */,
+				E9EFE70F1EB4944C00A77FF5 /* libmenu.5.4.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EFE7221EB4948900A77FF5 /* ViewManger.c in Sources */,
+				E9EFE7201EB4948900A77FF5 /* md5.c in Sources */,
 				E9EFE7081EB4943C00A77FF5 /* main.c in Sources */,
+				E9EFE71F1EB4948900A77FF5 /* config.c in Sources */,
+				E9EFE71E1EB4948900A77FF5 /* BookView.c in Sources */,
+				E9EFE7211EB4948900A77FF5 /* MenuView.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
