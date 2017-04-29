@@ -116,8 +116,9 @@ void enter()
         int curIndex = enterMenu();
         openBook(curIndex);
         win=BOOK_WIN;
+        ref();
     }
-    ref();
+    
 }
 
 void openBook(int index)
